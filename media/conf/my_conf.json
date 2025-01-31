@@ -1,0 +1,39 @@
+{
+    "GLOBAL": {
+        "Canvas": {"w": 600, "h": 600},
+        "MaxSources": 4,
+        "Probability" : [
+            {"type": "3D", "value": 0},
+            {"type": "2D", "value": 35},
+            {"type": "AUTOMA", "value": 65}
+        ],
+        "WebM_FrameRate": 30
+    },
+    "3D":{
+        "SpecificProb": {"Texture_p": 0.5, "TextureVideo_p": 0.2, "RotX_p": 0.5, "RotY_p": 0.5, "RotZ_p": 0.5, "Transition_p": 0.5},
+        "SpecificVal": {"Rot_max": 0.3, "TranPoints_max": 10, "TransZ_min": -800, "TransZ_max": -200, "TargetMax_speed": 0.5},
+
+        "EffectsProb": {"BW_p": 0.2, "HueOff_p" : 0.5, "HueInc_p" : 0.5, "HueFlash_p" : 0.5, "HueSat_p" : 0.5,
+                        "Sample_p" : 0.8, "DitStein_p" : 0.33, "DitBay_p" : 0.66, "Ascii_p" : 0.3, "AsciiColor_p" : 0.2,
+                        "Glitch_p": 0.7, "GlitchPre_p": 0.3, "GlitchDyn_p": 0.7},
+        "EffectsVal": {"HueOff_max": 100, "HueInc_max": 15, "HueFlash_max": 20, "Sample_max": 9, "DitBayCol": 4, "DitBayDim": 2}
+                    
+    },
+    "2D":{
+        "SpecificProb": {"Video_p": 0.5},
+
+        "EffectsProb": {"BW_p": 0.2, "HueOff_p" : 0.5, "HueInc_p" : 0.5, "HueFlash_p" : 0.5, "HueSat_p" : 0.5,
+                        "Sample_p" : 0.8, "DitStein_p" : 0.33, "DitBay_p" : 0.66, "Ascii_p" : 0.4, "AsciiColor_p" : 0.4,
+                        "Glitch_p": 0.7, "GlitchPre_p": 0.3, "GlitchDyn_p": 0.7},
+        "EffectsVal": {"HueOff_max": 100, "HueInc_max": 15, "HueFlash_max": 20, "Sample_max": 9, "DitBayCol": 4, "DitBayDim": 2}
+    },
+    "AUTOMA":{
+        "SpecificProb": {"ChangeRule_p": 0.04, "Init_p": 0.3},
+        "SpecificVal": {"Depth_min": 2, "Depth_max": 7, "Size_list": [4, 5, 6, 8, 10, 12, 15, 20]},
+
+        "EffectsProb": {"BW_p": 0.1, "HueOff_p" : 0.5, "HueInc_p" : 0.5, "HueFlash_p" : 0.5, "HueSat_p" : 0.5,
+                        "Sample_p" : 0.8, "DitStein_p" : 0.9, "DitBay_p" : 0.95, "Ascii_p" : 0.1, "AsciiColor_p" : 0.6,
+                        "Glitch_p": 0.7, "GlitchPre_p": 0.3, "GlitchDyn_p": 0.7},
+        "EffectsVal": {"HueOff_max": 100, "HueInc_max": 15, "HueFlash_max": 20, "Sample_max": 9, "DitBayCol": 4, "DitBayDim": 2}
+    }
+}
