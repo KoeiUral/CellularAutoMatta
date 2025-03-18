@@ -182,9 +182,10 @@ class Mixer {
         }
 
         // Increment the Z-axis variable (i.e. time)
-        this.zOff += this.timeInc;
-        this.dsx +=  this.spaceInc * this.noiseVel.normalize().x;
-        this.dsy +=  this.spaceInc * this.noiseVel.normalize().y;
+        this.zOff += this.timeInc * abs(sin(frameCount * 0.5)) + random(0.01);
+        let spaceInc = this.spaceInc * abs(sin(frameCount * 0.5) * 2);
+        this.dsx +=  spaceInc * this.noiseVel.normalize().x;
+        this.dsy +=  spaceInc * this.noiseVel.normalize().y;
     }
 
 

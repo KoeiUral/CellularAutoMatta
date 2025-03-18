@@ -196,24 +196,29 @@ class SourceAutoma extends Source {
     }
 
     runScroll() {
-        if ((this.coolDown <= 0) && (random() < configMap['AUTOMA']['SpecificProb'].ChangeRule_p)) {
-            this.startRandomRule();
-            this.coolDown = 5;
-        }
-        else { 
-            this.evolve();
+        //let iterations = round(random(0, 10));
+        let iterations = round(15 * noise(frameCount * 0.1));
+
+        for (let i = 0; i < iterations; i++) {
+            if ((this.coolDown <= 0) && (random() < configMap['AUTOMA']['SpecificProb'].ChangeRule_p)) {
+                this.startRandomRule();
+                this.coolDown = 5;
+            }
+            else { 
+                this.evolve();
+            }
+
+            // If we reaches canvas bottom
+            if (this.stripes.length > this.maxCols + 1) {
+                // Remove the first stripe - scroll
+                this.stripes.splice(0, 1);  
+            }
+
+            this.coolDown--;
         }
 
         // Display all stripes
         this.display();
-
-        // If we reaches canvas bottom
-        if (this.stripes.length > this.maxCols + 1) {
-            // Remove the first stripe - scroll
-            this.stripes.splice(0, 1);  
-        }
-
-        this.coolDown--;
     }
 
     update() {
