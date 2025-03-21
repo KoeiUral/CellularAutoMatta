@@ -4,10 +4,11 @@
         "MaxSources": 4,
         "Probability" : [
             {"type": "3D", "value": 0},
-            {"type": "2D", "value": 35},
-            {"type": "AUTOMA", "value": 65}
+            {"type": "2D", "value": 0},
+            {"type": "AUTOMA", "value": 100}
         ],
-        "WebM_FrameRate": 30
+        "WebM_FrameRate": 30,
+        "Gif_SlowRate": 4
     },
     "3D":{
         "SpecificProb": {"Texture_p": 0.5, "TextureVideo_p": 0.2, "RotX_p": 0.5, "RotY_p": 0.5, "RotZ_p": 0.5, "Transition_p": 0.5},
@@ -29,11 +30,11 @@
     },
     "AUTOMA":{
         "SpecificProb": {"ChangeRule_p": 0.04, "Init_p": 0.3},
-        "SpecificVal": {"Depth_min": 2, "Depth_max": 7, "Size_list": [4, 5, 6, 8, 10, 12, 15, 20]},
+        "SpecificVal": {"Depth_min": 2, "Depth_max": 7, "Size_list": [4, 5, 6, 8, 10, 12, 15, 20], "Speed_max": 15, "Speed_break": 3},
 
-        "EffectsProb": {"BW_p": 0.1, "HueOff_p" : 0.5, "HueInc_p" : 0.5, "HueFlash_p" : 0.5, "HueSat_p" : 0.5,
+        "EffectsProb": {"BW_p": 0.1, "HueOff_p" : 0.5, "HueInc_p" : 0.5, "HueFlash_p" : 0.8, "HueSat_p" : 0.5,
                         "Sample_p" : 0.8, "DitStein_p" : 0.9, "DitBay_p" : 0.95, "Ascii_p" : 0.1, "AsciiColor_p" : 0.6,
-                        "Glitch_p": 0.7, "GlitchPre_p": 0.3, "GlitchDyn_p": 0.7},
+                        "Glitch_p": 0.4, "GlitchPre_p": 0.3, "GlitchDyn_p": 0.7},
         "EffectsVal": {"HueOff_max": 100, "HueInc_max": 15, "HueFlash_max": 20, "Sample_max": 9, "DitBayCol": 4, "DitBayDim": 2}
     }
 }

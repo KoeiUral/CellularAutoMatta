@@ -4,6 +4,7 @@ let recDuration = 100;
 let webmCapturer;
 let webmPeriod = -1;
 let webmStarted = false;
+let gifSlowRate = 1;
 let confData;
 
 const WIDGET_SIZE = 20;
@@ -15,9 +16,6 @@ function preload() {
     confData = loadJSON(CONF_PATH);
 }
 
-function mouseClicked() {
-
-}
 
 function updateGifPeriod() {
     let tempVal = parseInt(this.value());
@@ -71,6 +69,7 @@ function setup() {
     //myMixer.setTestProp();
 
     // Read frame rate from json and create the webm capturer
+    gifSlowRate = configMap['GLOBAL']['Gif_SlowRate'];
     let frameRate = configMap['GLOBAL']['WebM_FrameRate'];
     webmCapturer = new CCapture( { format: 'webm', display: true, framerate: frameRate} );
 
@@ -78,10 +77,12 @@ function setup() {
 }
 
 function draw() {
-    background(0);
-
-    myMixer.compose();
-    myMixer.render();
+    /* Process the image only every GifSlowRate time */
+    if ((frameCount % gifSlowRate) == 0) {
+        background(0);
+        myMixer.compose();
+        myMixer.render();
+    }
 
     if (DEBUG) {
         let fps = round(frameRate());

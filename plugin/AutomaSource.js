@@ -196,8 +196,9 @@ class SourceAutoma extends Source {
     }
 
     runScroll() {
-        //let iterations = round(random(0, 10));
-        let iterations = round(15 * noise(frameCount * 0.1));
+        let maxSpeed = configMap['AUTOMA']['SpecificVal'].Speed_max;
+        let breakValue = configMap['AUTOMA']['SpecificVal'].Speed_break;
+        let iterations = round(maxSpeed * noise(frameCount * 0.1)) - breakValue;
 
         for (let i = 0; i < iterations; i++) {
             if ((this.coolDown <= 0) && (random() < configMap['AUTOMA']['SpecificProb'].ChangeRule_p)) {
