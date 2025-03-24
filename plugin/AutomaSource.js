@@ -1,4 +1,4 @@
-const COLOR_PATH = './media/colors/';
+const COLOR_ROOT = './media/colors/';
 
 /**
  * Automata evolution, scroll direction
@@ -119,7 +119,8 @@ class SourceAutoma extends Source {
     }
 
     setSpecificProperties() {
-        let colorFiles = getFiles(COLOR_PATH);
+        let colorPath = COLOR_ROOT + configMap['AUTOMA']['SpecificVal'].Color_folder + "/"; 
+        let colorFiles = getFiles(colorPath);
         let colorId = floor(random(colorFiles.length));
 
         // Set random direction
@@ -138,16 +139,16 @@ class SourceAutoma extends Source {
         this.currentRule = floor(random(pow(this.currentDepth , this.currentDepth * 3 - 2)));
 
         // Set colore pallette
-        this.loadPalette(colorFiles[colorId]);
+        this.loadPalette(colorPath + colorFiles[colorId]);
 
         console.log("AUTOMATA - size:%d, depth:%d, cols:%f, color:%s", this.currentSize, this.currentDepth, this.maxCols, colorFiles[colorId]);
     }
 
     loadPalette(path, file) {
-        let fileName = (typeof file !== "undefined") ? file.name : path;
+        let fileName = (typeof file !== "undefined") ? file.name : path; // TODO: it is not working anymore with the file.name
 
         this.isPaletteLoaded = false;
-        loadJSON(COLOR_PATH + fileName, this.onJsonLoaded.bind(this));
+        loadJSON(fileName, this.onJsonLoaded.bind(this));
     }
 
     onJsonLoaded(jData) {

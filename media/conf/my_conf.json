@@ -8,7 +8,7 @@
             {"type": "AUTOMA", "value": 100}
         ],
         "WebM_FrameRate": 30,
-        "Gif_SlowRate": 4
+        "Gif_SlowRate": 1
     },
     "3D":{
         "SpecificProb": {"Texture_p": 0.5, "TextureVideo_p": 0.2, "RotX_p": 0.5, "RotY_p": 0.5, "RotZ_p": 0.5, "Transition_p": 0.5},
@@ -30,7 +30,7 @@
     },
     "AUTOMA":{
         "SpecificProb": {"ChangeRule_p": 0.04, "Init_p": 0.3},
-        "SpecificVal": {"Depth_min": 2, "Depth_max": 7, "Size_list": [4, 5, 6, 8, 10, 12, 15, 20], "Speed_max": 15, "Speed_break": 3},
+        "SpecificVal": {"Depth_min": 2, "Depth_max": 7, "Size_list": [4, 5, 6, 8, 10, 12, 15, 20], "Speed_max": 15, "Speed_break": 3, "Color_folder": "default"},
 
         "EffectsProb": {"BW_p": 0.1, "HueOff_p" : 0.5, "HueInc_p" : 0.5, "HueFlash_p" : 0.8, "HueSat_p" : 0.5,
                         "Sample_p" : 0.8, "DitStein_p" : 0.9, "DitBay_p" : 0.95, "Ascii_p" : 0.1, "AsciiColor_p" : 0.6,
