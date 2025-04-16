@@ -1,6 +1,8 @@
 {
     "GLOBAL": {
         "Canvas": {"w": 600, "h": 600},
+        "IsInstanceOn": 0,
+        "InstancePath": "default.json",
         "MaxSources": 4,
         "Probability" : [
             {"type": "3D", "value": 0},

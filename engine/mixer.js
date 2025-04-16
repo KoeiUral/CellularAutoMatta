@@ -1,12 +1,3 @@
-/*const FREQ = [1, 2, 4, 8, 16, 32];
-const AMP = [1, 1/2, 1/3, 1/4, 1/5, 1/6];
-const AMP_SUM = AMP[0] + AMP[1] + AMP[2] + AMP[3] + AMP[4] + AMP[5];
-
-const TIME_INC = 0.01;
-const SIN_K = 2;
-const EXP = 2;
-const DIST = 0.4;
-*/
 
 const SourceType = {
     DUMMY: 'DUMMY',
@@ -60,11 +51,9 @@ class Mixer {
         for (let item of this.sourceProb) {
             item.prob = item.prob / sum;
         }
-
-
     }
 
-    addSource(type, size) {
+    addSource(type) {
         let newSource;
 
         if (type === SourceType.DUMMY) {

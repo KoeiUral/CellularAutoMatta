@@ -79,6 +79,10 @@ class Source {
            this.glitcher.startSequence();
         }
 
+        this.dumpSettings();
+    }
+
+    dumpSettings() {
         console.log("\tsampling: %d, glitchScale: %d, preGlitch: %d", this.sampling, this.glitcher.imageScale, this.glitcher.isPreOn);
         console.log("\tascii: %d, dither: %s", this.isAsciiOn, this.ditherAlgo);
         console.log("\thue offset: %d, hue inc: %d, hue flash: %d,  hue sat: %d", this.hueOffset, this.hueInc, this.hueFlash, this.hueSaturation);
